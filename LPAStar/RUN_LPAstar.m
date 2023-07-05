@@ -7,8 +7,7 @@ clear
 close
 
 % adding paths
-addpath('D:\00-Robotics\02-Robot Path Planning\Methods\Astar-Single & Multi-MATLAB')
-addpath('D:\00-Robotics\02-Robot Path Planning\Methods\Astar-Single & Multi-MATLAB\SRPP')
+addpath('..\')
 
 %% settings
 Model.expandMethod = 'random';   % random or heading
