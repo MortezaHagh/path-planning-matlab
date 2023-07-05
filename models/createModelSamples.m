@@ -1,6 +1,7 @@
-function  model = createModelObstacles(obst_name, model)
+function  model = createModelSamples(obst_name, model)
+% create model from predefined samples
 
-disp('Create Model');
+disp('Create Model from samples');
 
 %% robot
 % robotD: D=direction , r,l,u,d
@@ -912,6 +913,46 @@ if TF
     obstX{12,1} = [14.5 20.5 20.5 14.5 ]; obstY{12,1} = [5.5 5.5 4.5 4.5 ];
 end
 
+%% Map Size
+Map.lim = limArea;
+Map.xMin = xmin;
+Map.xMax = xmax;
+Map.yMin = ymin;
+Map.yMax = ymax;
+
+Map.nX=Map.xMax-Map.xMin+1;
+Map.nY=Map.yMax-Map.yMin+1;
+
+%% robot data
+
+% dir: direction
+Robot.dir = 90; %randsample([0 90 180 270], 1);
+
+% start & goal - start & target coordinates
+Robot.xs = xs;
+Robot.ys = ys;
+Robot.xt = xt;
+Robot.yt = yt;
+
+%  start & goal - node numbers
+Robot.startNode = (Robot.ys-Map.yMin)*Map.nX + Robot.xs-Map.xMin+1;
+Robot.targetNode = (Robot.yt-Map.yMin)*Map.nX + Robot.xt-Map.xMin+1;
+
+%% obst
+
+% radius
+Obst.r = 0.25;
+
+Obst.x=xc;
+Obst.y=yc;
+Obst.count = length(Obst.x);
+
+% obstacle node numbers
+Obst.number = zeros(1,Obst.count);
+for ix = 1:Obst.count
+    Obst.nodeNumber(ix) = (Obst.y(ix)-Map.yMin)*Map.nX + Obst.x(ix)-Map.xMin+1;
+end
+
 %% Nodes & Adj
 k = 1;
 adj = cell(1,1);
@@ -942,6 +983,11 @@ for i = 1:length(xc)
 end
 
 %% save model
+model.Nodes = Nodes;
+model.Robot = Robot;
+model.Obst = Obst;
+model.Map = Map;
+
 model.obstX = obstX;
 model.obstY = obstY;
 model.xmin = xmin;
@@ -965,6 +1011,6 @@ model.obst_r = r;
 model.adj = adj;
 
 %% plot model
-plotModel(model)
+% plotModel(model)
 
 end

@@ -9,7 +9,7 @@ clear
 close
 
 % adding paths
-addpath('../common')
+addpath('..\')
 
 %% settings
 Model.expandMethod = 'heading';  % random or heading
@@ -25,7 +25,10 @@ Model.adjType = '4adj';          % 4adj or 8adj
 % % add robot data to model
 % Model = addRobotToModel(Model);
 
-% % Create Map and Model by User
+% % Create Model from Samples
+% Model = createModelSamples("Obstacle1", Model);
+
+% Create Map and Model by User
 Model = createModelBase(Model);
 
 %% optimal path by Astar
