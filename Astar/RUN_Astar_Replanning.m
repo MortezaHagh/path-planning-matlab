@@ -9,7 +9,8 @@ clear
 close
 
 % adding paths
-addpath('..\')
+addpath('..\models');
+addpath('..\common');
 
 %% setting
 Model.expandMethod = 'random';  % random or heading

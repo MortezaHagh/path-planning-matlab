@@ -10,6 +10,7 @@ close
 % adding paths
 addpath('..\models');
 addpath('..\common');
+addpath('..\DStarLite');
 
 %% settings
 Model.expandMethod = 'random';   % random or heading
@@ -25,16 +26,14 @@ Model.adjType = '4adj';          % 4adj or 8adj
 % % add robot data to model
 % Model = addRobotToModel(Model);
 
-% Create Map and Model by User
+%% Create Map and Model by User
 Model = createModelBase(Model);
-
-% Complete Base Model for DstarLite
 Model = createModelDstarLite(Model);
 
 %% # optimal path by Astar
 tic
-[Model, Path] = myDstarLite(Model);
-Sol = Path;
+[Model, Path] = myDstarLiteOptimised(Model);
+Sol = Path;   % path structure includes: nodes, coordinations, directions
 Sol.runTime = toc;
 Sol.cost = costL(Sol.coords);
 Sol.smoothness = smoothness_by_dir(Sol);
@@ -45,7 +44,7 @@ disp(Sol)
 
 plotModel(Model)
 plotSolution(Sol.coords, [])
-% plotAnimation2(Sol.coords)
+% plotAnimation2(sol.coords)
 
 %% clear temporal data
 clear adj_type dist_type
