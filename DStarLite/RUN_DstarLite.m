@@ -1,4 +1,5 @@
-% LPA*: Lifelong Planning A* Path Planning Algorithm - MATLAB
+% D*Lite: Path Planning Algorithm - MATLAB
+% Main code for running the algorithm.
 % Morteza Haghbeigi, m.haghbeigi@gmail.com
 
 % Initialization
@@ -26,13 +27,12 @@ Model.adjType = '4adj';          % 4adj or 8adj
 % Create Map and Model by User
 Model = createModelBase(Model);
 
-% Complete Base Model for LPAStar
-Model = createModelLPAstar(Model);
+% Complete Base Model for DstarLite
+Model = createModelDstarLite(Model);
 
-%% optimal path by LPAstar
-% Path: nodeNumbers, coords, dirs
+%% # optimal path by Astar
 tic
-[Model, Path] = myLPAstar(Model);
+[Model, Path] = myDstarLite(Model);
 Sol = Path;
 Sol.runTime = toc;
 Sol.cost = costL(Sol.coords);
