@@ -9,8 +9,7 @@ clear
 close
 
 % adding paths
-addpath('D:\00-Robotics\01-Path Planning\02-Search Methods\Astar-Single & Multi-MATLAB')
-addpath('D:\00-Robotics\01-Path Planning\02-Search Methods\Astar-Single & Multi-MATLAB\SRPP')
+addpath('../common')
 
 %% settings
 Model.expandMethod = 'heading';  % random or heading
@@ -24,7 +23,7 @@ Model.adjType = '4adj';          % 4adj or 8adj
 % Model = createModelFromMap(Map, Model);
 
 % % add robot data to model
-Model = addRobotToModel(Model);
+% Model = addRobotToModel(Model);
 
 % % Create Map and Model by User
 Model = createModelBase(Model);
