@@ -18,6 +18,7 @@ can change this setting in the Run_[method].m file
 - expansion method: **Model.expandMethod**
   - 'random': onlly based on distance cost
   - 'heading': based on distance and heading
+- create_model_method: 'from_map_file', 'from_samples', 'from_custom'
 
 ## Configuration - Models
 Initial configuration includes:
