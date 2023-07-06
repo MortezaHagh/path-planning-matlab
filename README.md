@@ -41,3 +41,20 @@ To change the configuration in *from_custom* method, you can edit the **createMo
 Apart from each path planning method's directory, there are two general directories:
 - **common**: common functionalities used in all planning methods
 - **models**: functions for creating and saving models (configurations). 
+
+## Simulations
+### Astar
+<table style="padding:10px">
+  <tr>
+    <td><img src="./AStar/Results/obstacle9.jpg"  alt="1"></td>
+    <td><img src="./AStar/Results/obstacles19.jpg" align="right" alt="2"></td>
+    <td><img src="./AStar/Results/obstacle1.jpg" align="right" alt="2"></td>
+  </tr>
+</table>
+
+### Astar with replanning
+<table style="padding:10px">
+  <tr>
+    <td><img src="./AStar/Results/srpp-1.gif"  alt="1" width = 280px height = 220px></td>
+  </tr>
+</table>

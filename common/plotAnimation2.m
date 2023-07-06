@@ -10,6 +10,11 @@ h1=plot(x(1), y(1), 'o', 'MarkerFaceColor', Color, 'MarkerEdgeColor', Color(1,:)
 h2=plot(x(1:2), y(1:2), 'Color', Color,'LineWidth', 2);
 pause(0.2)
 
+frame = getframe(gcf);
+img =  frame2im(frame);
+[img,cmap] = rgb2ind(img,256);
+imwrite(img,cmap,'animation.gif','gif','LoopCount',Inf,'DelayTime',1);
+
 for i=2:numel(x)
     
     set(h1, 'XData', x(i))
@@ -19,7 +24,12 @@ for i=2:numel(x)
     set(h2, 'YData', y(i-1:i))
     
     drawnow
-    pause(0.4)
+    pause(0.2)
+    
+    frame = getframe(gcf);
+    img =  frame2im(frame);
+    [img,cmap] = rgb2ind(img,256);
+    imwrite(img,cmap,'animation.gif','gif','WriteMode','append','DelayTime',0.2);
 end
 
 end

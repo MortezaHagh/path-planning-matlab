@@ -55,8 +55,8 @@ while Sol.nodeNumbers(end)~=Model.Robot.targetNode
     
     % update model (insert new obstacles)
     if t==5
-        newObstNode(end+1) = 36;
-        Model.Obsts.x(end+1) = 4;
+        newObstNode(end+1) = 37;
+        Model.Obsts.x(end+1) = 5;
         Model.Obsts.y(end+1) = 0;
         Model.Obsts.nodeNumber(end+1) = 37;
         Model.Obsts.count = Model.Obsts.count+1;
