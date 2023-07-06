@@ -20,7 +20,7 @@ while TopNode.nodeNumber ~= Model.Robot.targetNode
     Open = updateOpen(Open, Neighbors);
     
     % select new Top Node
-    [TopNode, Open] = selectTopNode(Open, Model.Robot.targetNode);
+    [TopNode, Open] = selectTopNode(Open, TopNode, Model.expandMethod, Model.Robot.targetNode);
     Closed.count = Closed.count+1;
     Closed.nodeNumber(Closed.count) = TopNode.nodeNumber;
 end

@@ -16,7 +16,7 @@ Map.nY=Map.yMax-Map.yMin+1;
 %% robot data
 
 % dir: direction
-Robot.dir = 90; %randsample([0 90 180 270], 1);
+Robot.dir = deg2rad(90); %randsample([0 90 180 270], 1);
 
 % start & goal - start & target coordinates
 Robot.xs = 0;
