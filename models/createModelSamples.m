@@ -971,6 +971,7 @@ for j = 0:ymax
         k = k+1;
     end
 end
+Nodes.count = numel(Nodes.number);
 
 % obstacle node numbers
 obstNode = zeros(1,length(xc));
