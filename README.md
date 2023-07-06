@@ -55,6 +55,6 @@ Apart from each path planning method's directory, there are two general director
 ### Astar with replanning
 <table style="padding:10px">
   <tr>
-    <td><img src="./AStar/Results/srpp-1.gif"  alt="1" width = 280px height = 220px></td>
+    <td><img src="./AStar/Results/srpp-1.gif"  alt="1" width = 330px height = 270px></td>
   </tr>
 </table>
