@@ -19,16 +19,16 @@ Model.adjType = '4adj';          % 4adj or 8adj
 create_model_method = 'from_custom';  % from_map_file, from_samples, from_custom
 
 switch create_model_method
-case 'from_map_file'
-    % load Map file and create model - (1:free, o:obstacles)
-    load(map_name, 'Map');
-    Model = createModelFromMap(Map, Model);
-    Model = addRobotToModel(Model);
-case 'from_samples'
-    sample_model_name = "Obstacle2";
-    Model = createModelSamples(sample_model_name, Model);
-case 'from_custom'
-    Model = createModelBase(Model);
+    case 'from_map_file'
+        % load Map file and create model - (1:free, o:obstacles)
+        load(map_name, 'Map');
+        Model = createModelFromMap(Map, Model);
+        Model = addRobotToModel(Model);
+    case 'from_samples'
+        sample_model_name = "Obstacle2";
+        Model = createModelSamples(sample_model_name, Model);
+    case 'from_custom'
+        Model = createModelBase(Model);
 end
 
 % complete base model for Astar
