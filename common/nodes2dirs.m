@@ -12,7 +12,7 @@ for i=2:nNodes
     dx = dd(1);
     dy = dd(2);
     nodeTheta = atan2(dy, dx);
-    pathDirs(i-1) = rad2deg(nodeTheta);
+    pathDirs(i-1) = nodeTheta;
 end
 
 pathDirs(end) = pathDirs(end-1);

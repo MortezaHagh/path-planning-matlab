@@ -1,4 +1,4 @@
-function smoothness = smoothness(pathCoords)
+function smoothness = calSmoothness(pathCoords)
 
 solX = pathCoords(:,1);
 solY = pathCoords(:,2);

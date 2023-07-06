@@ -40,7 +40,7 @@ tic
 Sol = Path;
 Sol.runTime = toc;
 Sol.cost = costL(Sol.coords);
-Sol.smoothness = smoothness_by_dir(Sol);
+Sol.smoothness = calSmoothnessbyDir(Sol);
 
 %% modify path
 tic
@@ -48,8 +48,8 @@ Mpath = modifyPath (Model, Path);
 Msol = Mpath;
 Msol.runTime = Sol.runTime + toc;
 Msol.cost = costL(Msol.coords);
-Msol.smoothness = smoothness(Msol.coords);
-%Msol.smoothness = smoothness_by_dir(Msol);  #todo
+Msol.smoothness = calSmoothness(Msol.coords);
+%Msol.smoothness = calSmoothnessbyDir(Msol);  #todo
 
 %% # display data and plot solution
 disp(['run time for path= ' num2str(Sol.runTime)])

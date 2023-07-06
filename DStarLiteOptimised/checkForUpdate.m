@@ -5,7 +5,7 @@ if t==2
     
     xyStart = Start.cord;
     xySlast = Model.Nodes.cord(:, Model.sLast);
-    Model.km = Model.km +Distance(xySlast(1), xySlast(2), xyStart(1), xyStart(2), Model.distType);
+    Model.km = Model.km +calDistance(xySlast(1), xySlast(2), xyStart(1), xyStart(2), Model.distType);
     Model.sLast = Start.nodeNumber;
     
     % update model

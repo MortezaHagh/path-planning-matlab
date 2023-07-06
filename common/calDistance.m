@@ -1,4 +1,4 @@
-function dist = Distance(x1,y1,x2,y2, type)
+function dist = calDistance(x1,y1,x2,y2, type)
 
 if  strcmp(type,'euclidean')
     % euclidean distance

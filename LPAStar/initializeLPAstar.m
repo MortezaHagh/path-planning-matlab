@@ -11,7 +11,7 @@ RHS = Model.RHS;
 
 % set the starting node as the first node in Open
 TopNode.nodeNumber=Model.Robot.startNode;
-hCost = Distance(Model.Robot.xs, Model.Robot.ys, Model.Robot.xt, Model.Robot.yt, Model.distType);
+hCost = calDistance(Model.Robot.xs, Model.Robot.ys, Model.Robot.xt, Model.Robot.yt, Model.distType);
 TopNode.key = [hCost; 0];
 RHS(TopNode.nodeNumber)=0;
 TopNode.ind = 1;

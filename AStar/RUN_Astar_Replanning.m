@@ -91,7 +91,7 @@ if numel(newObstNode)>0
     Model_init.yc = [Model.Obsts.y Model.Nodes.cord(2,newObstNode)];
 end
 Sol.cost = costL(Sol.coords);
-Sol.smoothness = smoothness_by_dir(Sol);
+Sol.smoothness = calSmoothnessbyDir(Sol);
 
 %% display data and plot solution
 disp(Sol)

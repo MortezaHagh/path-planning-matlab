@@ -16,7 +16,7 @@ TopNode.pNode=Model.Robot.startNode;
 TopNode.dir = Model.Robot.dir;
 TopNode.visited = 1;
 TopNode.gCost = 0;
-hCost = Distance(Model.Robot.xs, Model.Robot.ys,  Model.Robot.xt,  Model.Robot.yt, Model.distType);
+hCost = calDistance(Model.Robot.xs, Model.Robot.ys,  Model.Robot.xt,  Model.Robot.yt, Model.distType);
 TopNode.fCost = TopNode.gCost + hCost;
 
 % insert TopNode (start node) in Open list

@@ -42,8 +42,8 @@ for iNeighbor=1:4
             list(nNeighbors).visited = 0;
             list(nNeighbors).nodeNumber = newNodeNumber;
             list(nNeighbors).pNode = TopNode.nodeNumber;
-            list(nNeighbors).gCost = TopNode.gCost + Distance(currentX, currentY, newX, newY, Model.distType);
-            hCost = Distance(Model.Robot.xt, Model.Robot.yt, newX, newY, Model.distType);
+            list(nNeighbors).gCost = TopNode.gCost + calDistance(currentX, currentY, newX, newY, Model.distType);
+            hCost = calDistance(Model.Robot.xt, Model.Robot.yt, newX, newY, Model.distType);
             list(nNeighbors).fCost = list(nNeighbors).gCost + hCost;
             list(nNeighbors).dir = newDir;
         end

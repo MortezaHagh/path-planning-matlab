@@ -11,7 +11,7 @@ RHS = Model.RHS;
 
 % set the target node as the first node in Open
 TopNode.nodeNumber=Model.Robot.targetNode;
-TopNode.hCost = Distance(Model.Robot.xs, Model.Robot.ys, Model.Robot.xt, Model.Robot.yt, Model.distType);
+TopNode.hCost = calDistance(Model.Robot.xs, Model.Robot.ys, Model.Robot.xt, Model.Robot.yt, Model.distType);
 TopNode.key = [TopNode.hCost; 0];
 RHS(TopNode.nodeNumber)=0;
 TopNode.ind = 1;
