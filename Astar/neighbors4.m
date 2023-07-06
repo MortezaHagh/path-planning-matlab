@@ -1,5 +1,5 @@
 function Neighbors = neighbors4(TopNode, Closed, Model)
-% arrange neighbors based on cost robot and direction
+% expand a node and find feasible successors
 % nodeNumber pNode gCost fCost dir
 
 curentXY = Model.Nodes.cord(:,TopNode.nodeNumber);

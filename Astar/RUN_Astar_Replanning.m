@@ -1,7 +1,5 @@
 % A* replanning: Single Robot Path Planning Algorithm - MATLAB
 % with remapping in case of new obstacle detection
-% Main code for running the algorithm.
-% Morteza Haghbeigi, m.haghbeigi@gmail.com
 
 % Initialization
 clc

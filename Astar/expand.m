@@ -26,7 +26,6 @@ for iNeighbor = 1:nNeighbors
         list(nExpand).fCost = list(nExpand).gCost + hCost;
         list(nExpand).dir = newDir;
     end
-    
 end
 
 % Neighbors

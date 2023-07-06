@@ -1,6 +1,6 @@
 function neighbors = neighbors8(TopNode, Closed, Model)
+% expand a node and find feasible successors
 % nodeNumber pNode gCost fCost dir
-
 
 curentXY = Model.Nodes.cord(:,TopNode.nodeNumber);
 currentX = curentXY(1);

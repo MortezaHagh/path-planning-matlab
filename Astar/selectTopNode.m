@@ -12,10 +12,10 @@ if nNoVisit>0
         dTheta;
         find(no_visit)]';
     switch expandMethod
-    case 'heading'
-        [~,sortInds]=sortrows(costArray(:,1:2));
-    otherwise
-        [~,sortInds]=sortrows(costArray(:,1));
+        case 'heading'
+            [~,sortInds]=sortrows(costArray(:,1:2));
+        otherwise
+            [~,sortInds]=sortrows(costArray(:,1));
     end
     open_top_ind = costArray(sortInds(1),3);
 else

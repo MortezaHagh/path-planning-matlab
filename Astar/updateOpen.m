@@ -1,7 +1,6 @@
 function Open = updateOpen(Open, Neighbors)
 % uodate Open by Neighbors
 
-
 % update or extend Open list with the successor nodes
 for iNeighbors=1:Neighbors.count
     neighbors_open_common = [Open.List.nodeNumber]==Neighbors.List(iNeighbors).nodeNumber;

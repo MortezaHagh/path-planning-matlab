@@ -27,7 +27,14 @@ Initial configuration includes:
 - robot's goal node
 - ...
 
-To change the configuration, you can edit the **createModelBase.m** file in **models** directory.
+There are three methods to create initial configuration (model):
+- **from_map_file**: from a map.mat file (square matrix, 0: occupied, 1: free)
+- **from_samples**: from a list of ready samples
+- **from_custom**: from createModelBase.m file which you can edit and customize
+
+You can set the method in the RUn_p[method].m file.
+
+To change the configuration in *from_custom* method, you can edit the **createModelBase.m** file in **models** directory.
 
 ## General
 Apart from each path planning method's directory, there are two general directories:
