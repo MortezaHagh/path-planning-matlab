@@ -9,7 +9,7 @@ if nNoVisit>0
     dTheta = angdiff(TopNode.dir*ones(1, nNoVisit), [Open.List(no_visit).dir]);
     dTheta = abs(dTheta);
     costArray = [[Open.List(no_visit).fCost];
-        dTheta
+        dTheta;
         find(no_visit)]';
     switch expandMethod
     case 'heading'
