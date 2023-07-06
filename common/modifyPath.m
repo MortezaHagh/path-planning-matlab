@@ -10,10 +10,10 @@ while it <= size(pathCoords,1) - 2
     X = linspace(pathCoords(it,1), pathCoords(it+2,1), NumPoints);
     Y = linspace(pathCoords(it,2), pathCoords(it+2,2), NumPoints);
     
-    violation = zeros(1,Model.Obst.count);
-    for k = 1:Model.Obst.count
-        dd = sqrt((X - Model.Obst.x(k)).^2+(Y - Model.Obst.y(k)).^2);
-        v = max(1-dd/(Model.Obst.r),0);
+    violation = zeros(1,Model.Obsts.count);
+    for k = 1:Model.Obsts.count
+        dd = sqrt((X - Model.Obsts.x(k)).^2+(Y - Model.Obsts.y(k)).^2);
+        v = max(1-dd/(Model.Obsts.r),0);
         violation(k) = mean(v);
     end
     Violation = any(violation);

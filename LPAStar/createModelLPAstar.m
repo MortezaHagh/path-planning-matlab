@@ -28,7 +28,7 @@ Successors = cell(nNodes,2);
 Predecessors = cell(nNodes,2);
 
 for iNode=1:nNodes
-    if ~any(iNode==Model.Obst.nodeNumber)
+    if ~any(iNode==Model.Obsts.nodeNumber)
         xNode = Nodes.cord(1,iNode);
         yNode = Nodes.cord(2,iNode);
         for iAdj=1:nAdj
@@ -41,7 +41,7 @@ for iNode=1:nNodes
             if(newX>=Model.Map.xMin && newX<=Model.Map.xMax) && (newY>=Model.Map.yMin && newY<=Model.Map.yMax)
                 newNodeNumber = iNode+ix+iy*(Model.Map.nX);
                 
-                if ~any(newNodeNumber==Model.Obst.nodeNumber)
+                if ~any(newNodeNumber==Model.Obsts.nodeNumber)
                     Successors{iNode,1} = [Successors{iNode}, newNodeNumber];
                     Predecessors{newNodeNumber,1} =  [Predecessors{newNodeNumber,1}, iNode];
                     if ix~=0 && iy~=0

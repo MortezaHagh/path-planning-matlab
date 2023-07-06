@@ -40,7 +40,7 @@ Obst.count = numel(Obst.nodeNumber);
 
 %% save model
 Model.Nodes = Nodes;
-Model.Obst = Obst;
+Model.Obsts = Obst;
 Model.Map = Map;
 
 % % save

@@ -10,9 +10,9 @@ dir = int32('d');
 obstX = cell(1,1);
 obstY = cell(1,1);
 
-%% obstacles
+%%% obstacles
 
-% Obstacle1
+%% Obstacle1
 TF = strcmp(obst_name,'Obstacle1');
 if TF
     limArea = 30;
@@ -86,7 +86,7 @@ if TF
     obstY{20,1} = [4.5 4.5 2.5 2.5 1.5 1.5 0.5 0.5 2.5 2.5 3.5 3.5  ];
 end
 
-% Obstacle2
+%% Obstacle2
 TF = strcmp(obst_name,'Obstacle2');
 if TF
     limArea = 30;
@@ -114,7 +114,7 @@ if TF
     obstY{4,1} = [24.5 24.5 23.5 23.5];
 end
 
-% Obstacle3
+%% Obstacle3
 TF = strcmp(obst_name,'Obstacle3');
 if TF
     limArea = 30;
@@ -139,7 +139,7 @@ if TF
     obstY{1,1} = [20.5 20.5 9.5 9.5 10.5 10.5 19.5 19.5 10.5 10.5 9.5 9.5];
 end
 
-% Obstacle4
+%% Obstacle4
 TF = strcmp(obst_name,'Obstacle4');
 if TF
     limArea = 30;
@@ -177,7 +177,7 @@ if TF
     obstY{2,1} = [y2 y3];
 end
 
-% Obstacle5
+%% Obstacle5
 TF = strcmp(obst_name,'Obstacle5');
 if TF
     limArea = 40;
@@ -211,7 +211,7 @@ if TF
     obstY{2,1} = [40  40  22.5  22.5 19.5 19.5 18.5 18.5 23.5 23.5];
 end
 
-% Obstacle6
+%% Obstacle6
 TF = strcmp(obst_name,'Obstacle6');
 if TF
     limArea = 40;
@@ -258,7 +258,7 @@ if TF
     obstY{4,1} = -obstY{3,1}+40;
 end
 
-% Obstacle7
+%% Obstacle7
 TF = strcmp(obst_name,'Obstacle7');
 if TF
     limArea = 30;
@@ -312,7 +312,7 @@ if TF
     obstY{4,1} = [30   30   17.5  17.5  14.5 14.5 13.5  13.5  18.5  18.5];
 end
 
-% Obstacle8
+%% Obstacle8
 TF = strcmp(obst_name,'Obstacle8');
 if TF
     limArea = 20;
@@ -358,7 +358,7 @@ if TF
     obstY{9,1} = [7.5 7.5 13.5 13.5 14.5 14.5 6.5 6.5];
 end
 
-% Obstacle9
+%% Obstacle9
 TF = strcmp(obst_name,'Obstacle9');
 if TF
     limArea = 20;
@@ -400,7 +400,7 @@ if TF
     obstY{2,1} = [12.5 12.5 4.5  4.5 18.5 18.5 17.5 17.5 5.5  5.5  11.5 11.5];
 end
 
-% Obstacle10
+%% Obstacle10
 TF = strcmp(obst_name,'Obstacle10');
 if TF
     limArea = 60;
@@ -438,7 +438,7 @@ if TF
     obstY{6,1} = [ 60   60  9.5   9.5];
 end
 
-% Obstacle11
+%% Obstacle11
 TF = strcmp(obst_name,'Obstacle11');
 if TF
     limArea = 60;
@@ -524,7 +524,7 @@ if TF
     obstY{18,1} = [60 60  30.5   30.5];
 end
 
-% Obstacle12
+%% Obstacle12
 TF = strcmp(obst_name,'Obstacle12');
 if TF
     limArea = 20;
@@ -585,7 +585,7 @@ if TF
     obstY{12,1} = Tempy;
 end
 
-% Obstacle13
+%% Obstacle13
 TF = strcmp(obst_name,'Obstacle13');
 if TF
     limArea = 30;
@@ -660,7 +660,7 @@ if TF
     obstY{5,1} = obstY{4,1};
 end
 
-% Obstacle14
+%% Obstacle14
 TF = strcmp(obst_name,'Obstacle14');
 if TF
     limArea = 30;
@@ -702,7 +702,7 @@ if TF
     end
 end
 
-% Obstacle15
+%% Obstacle15
 TF = strcmp(obst_name,'Obstacle15');
 if TF
     limArea = 40;
@@ -742,7 +742,7 @@ if TF
     obstY{2,1} = [oy3, oy4];
 end
 
-% Obstacle16
+%% Obstacle16
 TF = strcmp(obst_name,'Obstacle16');
 if TF
     limArea = 40;
@@ -784,7 +784,7 @@ if TF
     obstY{2,1} = [oy3, oy4];
 end
 
-% Obstacle17
+%% Obstacle17
 TF = strcmp(obst_name,'Obstacle17');
 if TF
     limArea = 30;
@@ -829,7 +829,7 @@ if TF
     obstY{2,1} = [17.5 17.5 13.5 13.5 10.5 10.5 13.5 13.5 17.5 17.5 1.5 1.5 ];
 end
 
-% Obstacle18
+%% Obstacle18
 TF = strcmp(obst_name,'Obstacle18');
 if TF
     limArea = 50;
@@ -882,7 +882,7 @@ if TF
         13.5 20.5 20.5 10.5 10.5 23.5 23.5  ];
 end
 
-% Obstacle19
+%% Obstacle19
 TF = strcmp(obst_name,'Obstacle19');
 if TF
     limArea = 20;
@@ -913,22 +913,20 @@ if TF
     obstX{12,1} = [14.5 20.5 20.5 14.5 ]; obstY{12,1} = [5.5 5.5 4.5 4.5 ];
 end
 
-%% Map Size
+%% Map
 Map.lim = limArea;
 Map.xMin = xmin;
 Map.xMax = xmax;
 Map.yMin = ymin;
 Map.yMax = ymax;
-
 Map.nX=Map.xMax-Map.xMin+1;
 Map.nY=Map.yMax-Map.yMin+1;
 
 %% robot data
-
 % dir: direction
 Robot.dir = 90; %randsample([0 90 180 270], 1);
 
-% start & goal - start & target coordinates
+% start & goal - coordinates
 Robot.xs = xs;
 Robot.ys = ys;
 Robot.xt = xt;
@@ -939,7 +937,6 @@ Robot.startNode = (Robot.ys-Map.yMin)*Map.nX + Robot.xs-Map.xMin+1;
 Robot.targetNode = (Robot.yt-Map.yMin)*Map.nX + Robot.xt-Map.xMin+1;
 
 %% obst
-
 % radius
 Obst.r = 0.25;
 

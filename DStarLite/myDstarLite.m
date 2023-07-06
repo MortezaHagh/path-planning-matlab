@@ -54,10 +54,10 @@ Path.coords = nodes2coords(Path.nodeNumbers, Model);
 Path.dirs = nodes2dirs(Path.nodeNumbers, Model);
 
 % update model
-Model.Obst.count = Model.Obst.count+1;
-Model.Obst.nodeNumber(end+1) = newobstNode;
+Model.Obsts.count = Model.Obsts.count+1;
+Model.Obsts.nodeNumber(end+1) = newobstNode;
 newObstXY = Model.Nodes.cord(:,newobstNode);
-Model.Obst.x = [Model.Obst.x, newObstXY(1,:)];
-Model.Obst.y = [Model.Obst.y, newObstXY(2,:)];
+Model.Obsts.x = [Model.Obsts.x, newObstXY(1,:)];
+Model.Obsts.y = [Model.Obsts.y, newObstXY(2,:)];
 
 end
