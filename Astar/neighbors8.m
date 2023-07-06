@@ -5,7 +5,6 @@ function neighbors = neighbors8(TopNode, Closed, Model)
 curentXY = Model.Nodes.cord(:,TopNode.nodeNumber);
 currentX = curentXY(1);
 currentY = curentXY(2);
-currentDir = deg2rad(TopNode.dir);
 
 dirList=[];
 nNeighbors=0;
@@ -17,8 +16,7 @@ for ix= 1:-1:-1
             %(i==0 || j==0)  % eliminate corner nodes -> 4 node
             newX = currentX +ix;
             newY = currentY +iy;
-            nodeHeading = atan2(iy, ix);
-            newDir = rad2deg(nodeHeading);
+            newDir = atan2(iy, ix);
             
             
             % check if the new node is within limits
@@ -37,7 +35,7 @@ for ix= 1:-1:-1
                     list(nNeighbors).fCost = list(nNeighbors).gCost + hCost;
                     list(nNeighbors).dir = newDir;
                     
-                    dirList = [dirList nodeHeading];
+                    dirList = [dirList newDir];
                 end
             end
         end

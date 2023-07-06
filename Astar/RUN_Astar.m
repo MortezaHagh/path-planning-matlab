@@ -15,7 +15,7 @@ addpath('..\common');
 %% settings
 Model.expandMethod = 'heading';  % random or heading
 Model.distType = 'manhattan';    % euclidean or manhattan;
-Model.adjType = '4adj';          % 4adj or 8adj
+Model.adjType = '8adj';          % 4adj or 8adj
 
 %% create Map and Model - loading a Map Matrix
 
@@ -31,6 +31,9 @@ Model.adjType = '4adj';          % 4adj or 8adj
 
 % Create Map and Model by User
 Model = createModelBase(Model);
+
+% complete base model for Astar
+Model=createModelAstar(Model);
 
 %% optimal path by Astar
 % Path: nodeNumbers, coords, dirs

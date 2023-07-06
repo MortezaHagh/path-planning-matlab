@@ -9,18 +9,17 @@ currentY = curentXY(2);
 
 % prioritize expanding based on direction or random
 dxy=[1 0; 0 1; 0 -1; -1 0];
-nodeHeadingD = [0 90 270 180];
+nodeHeading = deg2rad([0 90 270 180]);
 switch Model.expandMethod
     case 'heading'
-        nodeHeadingR = deg2rad(nodeHeadingD);
-        dTheta = rad2deg(angdiff(currentDir*ones(1, numel(nodeHeadingR)), nodeHeadingR));
+        dTheta = angdiff(currentDir*ones(1, numel(nodeHeading)), nodeHeading);
         [~, sortInd] = sort(abs(dTheta));
         dxy = dxy(sortInd,:);
-        nodeHeadingD = nodeHeadingD(sortInd);
+        nodeHeading = nodeHeading(sortInd);
     case 'random'
-        randInd = randperm(numel(nodeHeadingD));
+        randInd = randperm(numel(nodeHeading));
         dxy = dxy(randInd, :);
-        nodeHeadingD = nodeHeadingD(randInd);
+        nodeHeading = nodeHeading(randInd);
 end
 
 nNeighbors=0;
@@ -30,7 +29,7 @@ for iNeighbor=1:4
     iy=dxy(iNeighbor,2);
     newX = currentX+ix;
     newY = currentY+iy;
-    newDir = nodeHeadingD(iNeighbor);
+    newDir = nodeHeading(iNeighbor);
     
     % check if the new node is within limits
     if((newX>=Model.Map.xMin && newX<=Model.Map.xMax) && ...
