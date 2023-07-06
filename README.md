@@ -11,6 +11,14 @@ Including heuristic search and incremental heuristic search methods.
 - Go into the methods directory.
 - Run the **RUN_[Methods_name].m** file
 
+## Astar Settings
+can change this setting in the Run_[method].m file 
+- distance type: **Model.distType** ('euclidean' or 'manhattan')
+- distance type: **Model.adjType** ('4adj' or '8adj')
+- expansion method: **Model.expandMethod**
+  - 'random': onlly based on distance cost
+  - 'heading': based on distance and heading
+
 ## Configuration - Models
 Initial configuration includes:
 - Map (free nodes)
