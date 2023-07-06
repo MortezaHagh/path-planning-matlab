@@ -1,7 +1,6 @@
 function Model = createModelFromMap(MapInput, Model)
 % Create model from Map
 
-
 %% Map Size
 [H,W] = size(MapInput);
 Map.xMin = 1;
@@ -13,7 +12,6 @@ Map.nX=Map.xMax-Map.xMin+1;
 Map.nY=Map.yMax-Map.yMin+1;
 
 %% Obstacles
-
 Obst.r = 0.25;
 Obst.x=[];
 Obst.y=[];
@@ -38,7 +36,7 @@ end
 
 Obst.count = numel(Obst.nodeNumber);
 
-%% save model
+%% update model
 Model.Nodes = Nodes;
 Model.Obsts = Obst;
 Model.Map = Map;

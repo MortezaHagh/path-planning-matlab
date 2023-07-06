@@ -65,7 +65,7 @@ for iy = Map.yMin:Map.yMax
 end
 Nodes.count = iNode;
 
-%% create model
+%% update model
 Model.Nodes = Nodes;
 Model.Robot = Robot;
 Model.Obsts = Obst;

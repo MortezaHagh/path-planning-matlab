@@ -1,11 +1,13 @@
 function Model=createModelAstar(Model)
-% add neccessary data for Astar to Base Model
+% complete base model for Astar
 
-disp('Complete Model for AStar');
+disp('Complete base model for AStar');
 
-%% 
+%% neighbors
+
 Nodes = Model.Nodes;
 
+% number of neighbors
 switch Model.adjType
     case '4adj'
         ixy = [1 0; 0 1; 0 -1; -1 0];
@@ -15,7 +17,7 @@ switch Model.adjType
         nAdj=8;
 end
 
-% euclidean manhattan
+% distance type: euclidean manhattan
 switch Model.distType
     case 'manhattan'
         edgeLength=2;
@@ -23,7 +25,7 @@ switch Model.distType
         edgeLength=sqrt(2);
 end
 
-% tempNeighbor
+% tempNeighbor - tempNodesNeigh
 tempNeighbor.nodeNumber = 0;
 tempNeighbor.cost = 0;
 tempNeighbor.dir = 0;
@@ -72,7 +74,7 @@ for iNode=1:nNodes
     end
 end
 
-%% save model
+%% update model
 Model.Neighbors=Neighbors;
 
 %% plot model

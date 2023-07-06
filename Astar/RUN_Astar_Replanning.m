@@ -22,15 +22,17 @@ Model.adjType = '4adj';          % 4adj or 8adj
 % % load Map and create model - (1:free, o:obstacles)
 %  load(map_name, 'Map');
 % Model = createModelFromMap(Map, Model);
-
 % % add robot data to model
 % Model = addRobotToModel(Model);
 
 % % Create Model from Samples
-% Model = createModelSamples("Obstacle1", Model);
+% Model = createModelSamples("Obstacle2", Model);
 
 % Create Map and Model by User
 Model = createModelBase(Model);
+
+% complete base model for Astar
+Model = createModelAstar(Model);
 
 Model_init = Model;
 

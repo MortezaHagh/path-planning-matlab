@@ -1,4 +1,4 @@
-function  model = createModelSamples(obst_name, model)
+function  Model = createModelSamples(obst_name, Model)
 % create model from predefined samples
 
 disp('Create Model from samples');
@@ -924,7 +924,7 @@ Map.nY=Map.yMax-Map.yMin+1;
 
 %% robot data
 % dir: direction
-Robot.dir = 90; %randsample([0 90 180 270], 1);
+Robot.dir = deg2rad(90); %randsample([0 90 180 270], 1);
 
 % start & goal - coordinates
 Robot.xs = xs;
@@ -980,33 +980,33 @@ for i = 1:length(xc)
     end
 end
 
-%% save model
-model.Nodes = Nodes;
-model.Robot = Robot;
-model.Obst = Obst;
-model.Map = Map;
+%% update model
+Model.Nodes = Nodes;
+Model.Robot = Robot;
+Model.Obsts = Obst;
+Model.Map = Map;
 
-model.obstX = obstX;
-model.obstY = obstY;
-model.xmin = xmin;
-model.xmax = xmax;
-model.ymin = ymin;
-model.ymax = ymax;
-model.xs = xs;
-model.ys = ys;
-model.xt = xt;
-model.yt = yt;
-model.xc = xc;
-model.yc = yc;
-model.targetNode = targetNode;
-model.startNode = startNode;
-model.obstNode = obstNode;
-model.numOfObs=numel(xc);
-model.limArea = limArea;
-model.dir = dir;
-model.nodes = Nodes;
-model.obst_r = r;
-model.adj = adj;
+Model.obstX = obstX;
+Model.obstY = obstY;
+Model.xmin = xmin;
+Model.xmax = xmax;
+Model.ymin = ymin;
+Model.ymax = ymax;
+Model.xs = xs;
+Model.ys = ys;
+Model.xt = xt;
+Model.yt = yt;
+Model.xc = xc;
+Model.yc = yc;
+Model.targetNode = targetNode;
+Model.startNode = startNode;
+Model.obstNode = obstNode;
+Model.numOfObs=numel(xc);
+Model.limArea = limArea;
+Model.dir = dir;
+Model.nodes = Nodes;
+Model.obst_r = r;
+Model.adj = adj;
 
 %% plot model
 % plotModel(model)
