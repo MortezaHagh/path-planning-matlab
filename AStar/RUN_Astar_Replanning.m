@@ -15,19 +15,21 @@ Model.expandMethod = 'random';  % random or heading
 Model.distType = 'manhattan';    % euclidean or manhattan;
 Model.adjType = '4adj';          % 4adj or 8adj
 
-%% create Map and Model - loading a Map Matrix
+%% create Map and Model
+create_model_method = 'from_custom';  % from_map_file, from_samples, from_custom
 
-% % load Map and create model - (1:free, o:obstacles)
-%  load(map_name, 'Map');
-% Model = createModelFromMap(Map, Model);
-% % add robot data to model
-% Model = addRobotToModel(Model);
-
-% % Create Model from Samples
-% Model = createModelSamples("Obstacle2", Model);
-
-% Create Map and Model by User
-Model = createModelBase(Model);
+switch create_model_method
+case 'from_map_file'
+    % load Map file and create model - (1:free, o:obstacles)
+    load(map_name, 'Map');
+    Model = createModelFromMap(Map, Model);
+    Model = addRobotToModel(Model);
+case 'from_samples'
+    sample_model_name = "Obstacle2";
+    Model = createModelSamples(sample_model_name, Model);
+case 'from_custom'
+    Model = createModelBase(Model);
+end
 
 % complete base model for Astar
 Model = createModelAstar(Model);
