@@ -46,7 +46,7 @@ plot(xt,yt,'bp','MarkerSize',14,'MarkerEdgeColor',[0,1,1],...
 plot(obstX,obstY,'ko', 'MarkerSize',5,'MarkerFaceColor','k');
 
 % new (dynamic) obstacles
-if showDynamicObst && isfield(Model, 'NewObsts')
+if showDynamicObst && isfield(Model, 'NewObsts') && Model.NewObsts.count>0
     plot(Model.NewObsts.x, Model.NewObsts.y,'o', 'MarkerSize',5, ...
         'MarkerFaceColor', newObstColor, 'MarkerEdgeColor', newObstColor);
 end
