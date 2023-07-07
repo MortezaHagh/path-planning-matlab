@@ -5,7 +5,6 @@ function [Model, Path] = myDstarLite(Model)
 [G, RHS, Open] = initializeDstarLite(Model);
 
 t=1;
-newobstNode=[];
 Path.nodeNumbers = [Model.Robot.startNode];
 
 % update start_key
@@ -42,7 +41,7 @@ while Start.nodeNumber~=Model.Robot.targetNode
     t=t+1;
     
     % check for update in edge costs (obstacles)
-    [Open, RHS, newobstNode, Model] = checkForUpdate(Open, RHS, newobstNode, Model, G, t, Start);
+    [Open, RHS, Model] = checkForUpdate(Open, RHS, Model, G, t, Start);
     
     % compute shortest path
     [G, RHS, Open, Start] = computeShortestPath(G, RHS, Open, Start, Model);
@@ -52,12 +51,5 @@ end
 %% optimal paths coordinations, nodes, directions
 Path.coords = nodes2coords(Path.nodeNumbers, Model);
 Path.dirs = nodes2dirs(Path.nodeNumbers, Model);
-
-% update model
-Model.Obsts.count = Model.Obsts.count+1;
-Model.Obsts.nodeNumber(end+1) = newobstNode;
-newObstXY = Model.Nodes.cord(:,newobstNode);
-Model.Obsts.x = [Model.Obsts.x, newObstXY(1,:)];
-Model.Obsts.y = [Model.Obsts.y, newObstXY(2,:)];
 
 end

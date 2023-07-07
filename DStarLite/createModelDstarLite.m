@@ -61,6 +61,9 @@ end
 G = inf(1, nNodes);
 RHS = inf(1, nNodes);
 
+%% dynamic obsts
+Model.NewObsts.count = 0;
+
 %% save model
 Model.sLast = Model.Robot.startNode;
 Model.Predecessors=Predecessors;
