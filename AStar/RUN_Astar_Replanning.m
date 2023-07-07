@@ -11,9 +11,9 @@ addpath('..\models');
 addpath('..\common');
 
 %% setting
-Model.expandMethod = 'random';  % random or heading
-Model.distType = 'manhattan';    % euclidean or manhattan;
-Model.adjType = '4adj';          % 4adj or 8adj
+Model.expandMethod = 'heading';  % random or heading
+Model.distType = 'euclidean';    % euclidean or manhattan;
+Model.adjType = '8adj';          % 4adj or 8adj
 
 %% create Map and Model
 create_model_method = 'from_custom';  % from_map_file, from_samples, from_custom
@@ -34,7 +34,8 @@ end
 % complete base model for Astar
 Model = createModelAstar(Model);
 
-Model_init = Model;
+% add dynamic obstacles
+Model = newObstacles(Model);
 
 %% start timer
 tic
@@ -53,14 +54,19 @@ while Sol.nodeNumbers(end)~=Model.Robot.targetNode
     t=t+1;
     pt=pt+1;
     
-    % update model (insert new obstacles)
-    if t==5
-        newObstNode(end+1) = 37;
-        Model.Obsts.x(end+1) = 5;
-        Model.Obsts.y(end+1) = 0;
-        Model.Obsts.nodeNumber(end+1) = 37;
-        Model.Obsts.count = Model.Obsts.count+1;
+    % insert new obstacles
+    if isfield(Model, 'NewObsts')
+        for i=1:Model.NewObsts.count
+            if t==Model.NewObsts.t(i)
+                newObstNode(end+1) = Model.NewObsts.nodeNumbers(i);
+                Model.Obsts.x(end+1) = Model.NewObsts.x(i);
+                Model.Obsts.y(end+1) = Model.NewObsts.y(i);
+                Model.Obsts.nodeNumber(end+1) = newObstNode(end);
+                Model.Obsts.count = Model.Obsts.count+1;
+            end
+        end
     end
+
     % check if path replanning is needed
     if any(Path.nodeNumbers(pt) == Model.Obsts.nodeNumber)
         Model.Robot.startNode = Sol.nodeNumbers(end);
@@ -85,20 +91,15 @@ Sol.coords = nodes2coords(Sol.nodeNumbers, Model);
 Sol.dirs = nodes2dirs(Sol.nodeNumbers, Model);
 
 %% update model and calculate cost
-newObstNode = newObstNode(2:end);
-if numel(newObstNode)>0
-    Model_init.xc = [Model.Obsts.x Model.Nodes.cord(1,newObstNode)];
-    Model_init.yc = [Model.Obsts.y Model.Nodes.cord(2,newObstNode)];
-end
 Sol.cost = calCostL(Sol.coords);
 Sol.smoothness = calSmoothnessbyDir(Sol);
 
 %% display data and plot solution
 disp(Sol)
-
-plotModel(Model)
+showDynamicObst = true;
+plotModel(Model, showDynamicObst)
 plotSolution(Sol.coords,[])
-% plotAnimation2(Sol.coords)
+% plotAnimation2(Model, Sol.coords)
 
 %% clear temporal data
 clear xy t pt dirs newobstNode adj_type dist_type
