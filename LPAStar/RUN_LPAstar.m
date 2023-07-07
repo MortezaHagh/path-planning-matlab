@@ -11,8 +11,8 @@ addpath('..\common');
 
 %% settings
 Model.expandMethod = 'random';   % random or heading
-Model.distType = 'manhattan';    % euclidean or manhattan;
-Model.adjType = '4adj';          % 4adj or 8adj
+Model.distType = 'euclidean';    % euclidean or manhattan;
+Model.adjType = '8adj';          % 4adj or 8adj
 
 %% create Map and Model
 create_model_method = 'from_custom';  % from_map_file, from_samples, from_custom
@@ -34,7 +34,7 @@ end
 Model = createModelLPAstar(Model);
 
 % add dynamic obstacles
-Model = newObstacles(Model)
+Model = newObstacles(Model);
 
 %% optimal path by LPAstar
 % Path: nodeNumbers, coords, dirs
@@ -50,8 +50,8 @@ disp(['run time for path= ' num2str(Sol.runTime)])
 disp(Sol)
 
 plotModel(Model)
-plotSolution(Sol.coords, [])
-% plotAnimation2(Sol.coords)
+% plotSolution(Sol.coords, [])
+plotAnimation2(Model, Sol.coords)
 
 %% clear temporal data
 clear adj_type dist_type

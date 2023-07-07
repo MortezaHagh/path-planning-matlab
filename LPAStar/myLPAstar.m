@@ -32,12 +32,4 @@ Path.nodeNumbers = finalPathNodeNumbers;
 Path.coords = nodes2coords(Path.nodeNumbers, Model);
 Path.dirs = nodes2dirs(Path.nodeNumbers, Model);
 
-%% update model
-Model.Obsts.count = Model.Obsts.count+1;
-Model.Obsts.nodeNumber(end+1) = newObstNode;
-% Model.startNode = Model.Robot.startNode;
-newObstXY = Model.Nodes.cord(:,newObstNode);
-Model.Obsts.x = [Model.Obsts.x, newObstXY(1,:)];
-Model.Obsts.y = [Model.Obsts.y, newObstXY(2,:)];
-
 end

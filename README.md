@@ -63,6 +63,6 @@ Includes final path modification (green path in the simulation pictures).
 ### Astar with replanning
 <table style="padding:10px">
   <tr>
-    <td><img src="./AStar/Results/srpp-1.gif"  alt="1" width = 330px height = 270px></td>
+    <td><img src="./AStar/Results/sim-1.gif"  alt="1" width = 330px height = 270px></td>
   </tr>
 </table>

@@ -57,7 +57,7 @@ disp(Sol)
 
 plotModel(Model)
 plotSolution(Sol.coords, Msol.coords)
-% plotAnimation2(Sol.coords)
+% plotAnimation2(Model, Sol.coords)
 
 %% clear temporal data
 clear adj_type dist_type

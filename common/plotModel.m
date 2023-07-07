@@ -36,9 +36,12 @@ plot(xt,yt,'bp','MarkerSize',14,'MarkerEdgeColor',[0,1,1],...
 % end
 
 % Obstacles
-for i=1:length(obstX)
-    plot(obstX(i),obstY(i),'ko', 'MarkerSize',5,'MarkerFaceColor','k');
-end
+plot(obstX,obstY,'ko', 'MarkerSize',5,'MarkerFaceColor','k');
+
+% % new (dynamic) obstacles
+% if isfield(Model, 'NewObsts')
+%     plot(Model.NewObsts.x, Model.NewObsts.y,'ko', 'MarkerSize',5,'MarkerFaceColor', [0.8500 0.3250 0.0980]);
+% end
 
 % % Obstacles patch
 % for i = 1:size(model.obstX,1)

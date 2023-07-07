@@ -17,10 +17,14 @@ Map.nY=Map.yMax-Map.yMin+1;
 Robot.dir = deg2rad(90); %randsample([0 90 180 270], 1);
 
 % start & goal - coordinates
-Robot.xs = 0;
-Robot.ys = 0;
-Robot.xt = 6;
-Robot.yt = 7;
+% Robot.xs = 0;
+% Robot.ys = 0;
+% Robot.xt = 6;
+% Robot.yt = 7;
+Robot.xs = 7;
+Robot.ys = 4;
+Robot.xt = 21;
+Robot.yt = 16;
 
 %  start & goal - node numbers
 Robot.startNode = (Robot.ys-Map.yMin)*Map.nX + Robot.xs-Map.xMin+1;
