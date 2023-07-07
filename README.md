@@ -58,7 +58,7 @@ Includes final path modification (green path in the simulation pictures).
 
 ---
 ## Simulations
-### A*star*
+### A*
 <table style="padding:10px">
   <tr>
     <td><img src="./AStar/Results/obstacle9.jpg"  alt="1"></td>
