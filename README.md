@@ -24,6 +24,10 @@ Including heuristic search and incremental heuristic search methods.
 
 - Go into the methods directory.
 - Run the **RUN_[Methods_name].m** file
+  - AStar/RUN_Astar.m
+  - LPAStar/RUN_LPAstar.m
+  - DStarLite/RUN_DstarLite.m
+
 
 ## General
 
