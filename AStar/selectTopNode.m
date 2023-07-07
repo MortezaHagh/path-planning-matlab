@@ -13,7 +13,7 @@ if nNoVisit>0
         find(no_visit)]';
     switch expandMethod
         case 'heading'
-            [~,sortInds]=sortrows(costArray(:,1:2));
+            [~,sortInds]=sortrows(costArray(:,[1 2]));
         otherwise
             [~,sortInds]=sortrows(costArray(:,1));
     end
@@ -28,5 +28,3 @@ Open.List(open_top_ind).visited = 1;
 topNode = Open.List(open_top_ind);
 
 end
-
-

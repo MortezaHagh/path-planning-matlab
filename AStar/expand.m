@@ -23,7 +23,7 @@ for iNeighbor = 1:nNeighbors
         list(nExpand).pNode = TopNode.nodeNumber;
         list(nExpand).gCost = TopNode.gCost + newCost;
         hCost = calDistance(Model.Robot.xt, Model.Robot.yt, newX, newY, Model.distType);
-        list(nExpand).fCost = list(nExpand).gCost + hCost;
+        list(nExpand).fCost = list(nExpand).gCost + 0.1*hCost;
         list(nExpand).dir = newDir;
     end
 end
