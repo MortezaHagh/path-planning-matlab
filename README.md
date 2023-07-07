@@ -3,6 +3,8 @@
 Single robot path planning algorithms implemented in MATLAB.
 Including heuristic search and incremental heuristic search methods.
 
+(Procedural programming)
+
 <table style="padding:10px">
   <tr>
     <td><img src="./AStar/Results/obstacle1.jpg" align="right" alt="2"></td>
