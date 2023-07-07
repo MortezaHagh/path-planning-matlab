@@ -15,7 +15,7 @@ Model.distType = 'euclidean'; % euclidean or manhattan;
 Model.adjType = '8adj'; % 4adj or 8adj
 
 %% create Map and Model
-create_model_method = 'from_custom';  % from_map_file, from_samples, from_custom
+create_model_method = 'from_custom'; % from_map_file, from_samples, from_custom
 
 switch create_model_method
     case 'from_map_file'

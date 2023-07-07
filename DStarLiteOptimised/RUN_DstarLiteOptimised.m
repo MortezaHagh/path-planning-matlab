@@ -13,12 +13,12 @@ addpath('..\common');
 addpath('..\DStarLite');
 
 %% settings
-Model.expandMethod = 'heading';   % random or heading
-Model.distType = 'euclidean';    % euclidean or manhattan;
-Model.adjType = '8adj';          % 4adj or 8adj
+Model.expandMethod = 'heading'; % random or heading
+Model.distType = 'euclidean'; % euclidean or manhattan;
+Model.adjType = '8adj'; % 4adj or 8adj
 
 %% create Map and Model
-create_model_method = 'from_custom';  % from_map_file, from_samples, from_custom
+create_model_method = 'from_custom'; % from_map_file, from_samples, from_custom
 
 switch create_model_method
     case 'from_map_file'
@@ -42,7 +42,7 @@ Model = newObstacles(Model);
 %% # optimal path by Astar
 tic
 [Model, Path] = myDstarLiteOptimised(Model);
-Sol = Path;   % path structure includes: nodes, coordinations, directions
+Sol = Path; % path structure includes: nodes, coordinations, directions
 Sol.runTime = toc;
 Sol.cost = calCostL(Sol.coords);
 Sol.smoothness = calSmoothnessbyDir(Sol);
@@ -58,4 +58,3 @@ plotSolution(Sol.coords, [])
 
 %% clear temporal data
 clear adj_type dist_type
-

@@ -11,12 +11,12 @@ addpath('..\models');
 addpath('..\common');
 
 %% setting
-Model.expandMethod = 'heading';  % random or heading
-Model.distType = 'euclidean';    % euclidean or manhattan;
-Model.adjType = '8adj';          % 4adj or 8adj
+Model.expandMethod = 'heading'; % random or heading
+Model.distType = 'euclidean'; % euclidean or manhattan;
+Model.adjType = '8adj'; % 4adj or 8adj
 
 %% create Map and Model
-create_model_method = 'from_custom';  % from_map_file, from_samples, from_custom
+create_model_method = 'from_custom'; % from_map_file, from_samples, from_custom
 
 switch create_model_method
     case 'from_map_file'
@@ -47,28 +47,33 @@ tic
 [Model, Path] = myAStar(Model);
 
 % preallocation
-newObstNode=0;
+newObstNode = 0;
 Sol.nodeNumbers = [0];
 
-t=0;
-pt=0;
-while Sol.nodeNumbers(end)~=Model.Robot.targetNode
-    t=t+1;
-    pt=pt+1;
-    
+t = 0;
+pt = 0;
+
+while Sol.nodeNumbers(end) ~= Model.Robot.targetNode
+    t = t + 1;
+    pt = pt + 1;
+
     % insert new obstacles
     if isfield(Model, 'NewObsts')
-        for i=1:Model.NewObsts.count
-            if t==Model.NewObsts.t(i)
-                newObstNode(end+1) = Model.NewObsts.nodeNumbers(i);
-                Model.Obsts.x(end+1) = Model.NewObsts.x(i);
-                Model.Obsts.y(end+1) = Model.NewObsts.y(i);
-                Model.Obsts.nodeNumber(end+1) = newObstNode(end);
-                Model.Obsts.count = Model.Obsts.count+1;
+
+        for i = 1:Model.NewObsts.count
+
+            if t == Model.NewObsts.t(i)
+                newObstNode(end + 1) = Model.NewObsts.nodeNumbers(i);
+                Model.Obsts.x(end + 1) = Model.NewObsts.x(i);
+                Model.Obsts.y(end + 1) = Model.NewObsts.y(i);
+                Model.Obsts.nodeNumber(end + 1) = newObstNode(end);
+                Model.Obsts.count = Model.Obsts.count + 1;
             end
+
         end
+
     end
-    
+
     % check if path replanning is needed
     if any(Path.nodeNumbers(pt) == Model.Obsts.nodeNumber)
         Model.Robot.startNode = Sol.nodeNumbers(end);
@@ -78,9 +83,9 @@ while Sol.nodeNumbers(end)~=Model.Robot.targetNode
         dirs = nodes2dirs(Sol.nodeNumbers, Model);
         Model.dir = dirs(end);
         [Model, Path] = myAStar(Model);
-        pt=2;
+        pt = 2;
     end
-    
+
     % update final sol
     Sol.nodeNumbers(t) = Path.nodeNumbers(pt);
 end
@@ -101,7 +106,7 @@ disp(Sol)
 
 showDynamicObst = true;
 plotModel(InitModel, showDynamicObst)
-plotSolution(Sol.coords,[])
+plotSolution(Sol.coords, [])
 % plotAnimation2(Model, Sol.coords)
 
 %% clear temporal data
