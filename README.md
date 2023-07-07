@@ -19,7 +19,6 @@ Including heuristic search and incremental heuristic search methods.
 - LPA*(Life Long Planning A*)
 - D*Lite (With Optimized Version)
 
----
 
 ## Run
 
@@ -33,7 +32,6 @@ Apart from each path planning method's directory, there are two general director
 - **common**: common functionalities used in all planning methods
 - **models**: functions for creating and saving models (configurations).
 
----
 
 ## Common Settings
 
@@ -46,7 +44,6 @@ can change this setting in the Run_[method].m file
   - 'heading': based on distance and heading
 - create_model_method: 'from_map_file', 'from_samples', 'from_custom'
 
----
 
 ## Configuration - Models
 
@@ -68,13 +65,11 @@ You can set the method in the RUn_p[method].m file.
 
 To change the configuration in *from_custom* method, you can edit the **createModelBase.m** file in **models** directory.
 
----
 
 ## A*
 
 Includes final path modification (green path in the simulation pictures).
 
----
 
 ## Simulations
 
