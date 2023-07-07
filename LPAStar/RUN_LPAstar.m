@@ -20,6 +20,7 @@ create_model_method = 'from_custom'; % from_map_file, from_samples, from_custom
 switch create_model_method
     case 'from_map_file'
         % load Map file and create model - (1:free, o:obstacles)
+        map_name = 'Map.mat';
         load(map_name, 'Map');
         Model = createModelFromMap(Map, Model);
         Model = addRobotToModel(Model);
