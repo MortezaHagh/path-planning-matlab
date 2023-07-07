@@ -98,6 +98,7 @@ Sol.smoothness = calSmoothnessbyDir(Sol);
 
 %% display data and plot solution
 disp(Sol)
+
 showDynamicObst = true;
 plotModel(InitModel, showDynamicObst)
 plotSolution(Sol.coords,[])
