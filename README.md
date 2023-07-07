@@ -2,6 +2,13 @@
 Single robot path planning algorithms implemented in MATLAB.
 Including heuristic search and incremental heuristic search methods. 
 
+<table style="padding:10px">
+  <tr>
+    <td><img src="./AStar/Results/obstacle1.jpg" align="right" alt="2"></td>
+    <td><img src="./LPAStar/Results/sim-2.gif"  alt="1"></td>
+  </tr>
+</table>
+
 ## Methods
 - A* (can turn into Dijkstra by changing the heuristic function)
 - LPA* (Life Long Planning A*)
@@ -51,7 +58,7 @@ Includes final path modification (green path in the simulation pictures).
 
 ---
 ## Simulations
-### Astar
+### A*star*
 <table style="padding:10px">
   <tr>
     <td><img src="./AStar/Results/obstacle9.jpg"  alt="1"></td>
@@ -60,9 +67,10 @@ Includes final path modification (green path in the simulation pictures).
   </tr>
 </table>
 
-### Astar with replanning
+### LPA*
 <table style="padding:10px">
   <tr>
-    <td><img src="./AStar/Results/sim-1.gif"  alt="1" width = 330px height = 270px></td>
+    <td><img src="./LPAStar/Results/sim-2.gif"  alt="1" width = 360px height = 300px></td>
   </tr>
 </table>
+
