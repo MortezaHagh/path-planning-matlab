@@ -1,7 +1,6 @@
 function [G, RHS, Open] = computeShortestPath(G, RHS, Open, Model)
 % computeShortestPath between current startNode and targetNode
 
-
 % select top key
 TopNode = topKey(Open);
 

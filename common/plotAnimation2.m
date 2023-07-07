@@ -22,6 +22,11 @@ for i=2:numel(x)
     
     set(h2, 'XData', x(i-1:i))
     set(h2, 'YData', y(i-1:i))
+
+    % % New Obstacles
+    % if i==4
+    %     plot(obstX(i),obstY(i),'ko', 'MarkerSize',5,'MarkerFaceColor','k');
+    % end
     
     drawnow
     pause(0.2)

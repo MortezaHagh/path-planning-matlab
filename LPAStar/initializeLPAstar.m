@@ -1,7 +1,6 @@
 function [G, RHS, Open] = initializeLPAstar(Model)
 % Initialize LPAstar PP problem.
 
-
 % G, RHS
 G = Model.G;
 RHS = Model.RHS;

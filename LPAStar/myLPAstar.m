@@ -6,7 +6,6 @@ function [Model, Path] = myLPAstar(Model)
 [G, RHS, Open] = initializeLPAstar(Model);
 
 t=1;
-newObstNode = [];
 finalPathNodeNumbers = [Model.Robot.startNode;];
 
 %% main procedure
@@ -24,7 +23,7 @@ while Model.startNode~=Model.Robot.targetNode
     t=t+1;
     
     % check for update in edge costs (obstacles)
-    [Open, RHS, newObstNode, Model] = checkForUpdate(Open, RHS, newObstNode, Model, G, t);
+    [Open, RHS, Model] = checkForUpdate(Open, RHS, Model, G, t);
     
 end
 
