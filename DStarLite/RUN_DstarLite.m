@@ -15,7 +15,7 @@ Model.distType = 'euclidean';    % euclidean or manhattan;
 Model.adjType = '8adj';          % 4adj or 8adj
 
 %% create Map and Model
-create_model_method = 'from_samples';  % from_map_file, from_samples, from_custom
+create_model_method = 'from_custom';  % from_map_file, from_samples, from_custom
 
 switch create_model_method
     case 'from_map_file'
@@ -24,7 +24,7 @@ switch create_model_method
         Model = createModelFromMap(Map, Model);
         Model = addRobotToModel(Model);
     case 'from_samples'
-        sample_model_name = "Obstacle2";
+        sample_model_name = "Obstacle9";
         Model = createModelSamples(sample_model_name, Model);
     case 'from_custom'
         Model = createModelBase(Model);
@@ -48,7 +48,7 @@ Sol.smoothness = calSmoothnessbyDir(Sol);
 disp(['run time for path= ' num2str(Sol.runTime)])
 disp(Sol)
 
-showDynamicObst = false;
+showDynamicObst = true;
 plotModel(Model, showDynamicObst)
 plotSolution(Sol.coords, [])
 % plotAnimation2(Model, Sol.coords)
