@@ -67,7 +67,7 @@ Includes final path modification (green path in the simulation pictures).
   </tr>
 </table>
 
-### LPA*
+### LPA* and D*Lite
 <table style="padding:10px">
   <tr>
     <td><img src="./LPAStar/Results/sim-2.gif"  alt="1" width = 360px height = 290px></td>
