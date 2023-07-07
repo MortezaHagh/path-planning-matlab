@@ -20,7 +20,7 @@ while compareKeys(TopNode.key, Start.key) || RHS(Start.nodeNumber)~=G(Start.node
     nodesForUpdate = Model.Predecessors{TopNode.nodeNumber,1};
     if compareKeys(k_old, k_new)
         Open.List(end+1) = TopNode;
-        Open.List(end+1).key = k_new;
+        Open.List(end).key = k_new;
         Open.count = Open.count+1;
     else
         if G(TopNode.nodeNumber)>RHS(TopNode.nodeNumber)
