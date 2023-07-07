@@ -94,3 +94,8 @@ Includes final path modification (green path in the simulation pictures).
     <td><img src="./LPAStar/Results/sim-2.gif"  alt="1" width = 360px height = 290px></td>
   </tr>
 </table>
+
+
+## Resources
+- Koenig, S., & Likhachev, M. (2002, July). D* lite. In Eighteenth national conference on Artificial intelligence (pp. 476-483).
+- E. Khanmirza, M. Haghbeigi, M. Nazarahari and S. Doostie, "A Comparative Study of Deterministic and Probabilistic Mobile Robot Path Planning Algorithms," 2017 5th RSI International Conference on Robotics and Mechatronics (ICRoM) [Link](https://ieeexplore.ieee.org/abstract/document/8466197)
