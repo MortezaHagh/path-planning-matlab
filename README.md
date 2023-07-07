@@ -79,7 +79,7 @@ Includes final path modification (green path in the simulation pictures).
 
 <table style="padding:10px">
   <tr>
-    <td><img src="./AStar/Results/obstacle9.jpg"  alt="1"></td>
+    <td><img src="./AStar/Results/obstacle9-s.jpg"  alt="1"></td>
     <td><img src="./AStar/Results/obstacles19.jpg" align="right" alt="2"></td>
     <td><img src="./AStar/Results/obstacle1.jpg" align="right" alt="2"></td>
   </tr>
