@@ -49,9 +49,10 @@ Sol.smoothness = calSmoothnessbyDir(Sol);
 disp(['run time for path= ' num2str(Sol.runTime)])
 disp(Sol)
 
-plotModel(Model)
-% plotSolution(Sol.coords, [])
-plotAnimation2(Model, Sol.coords)
+showDynamicObst = true;
+plotModel(Model, showDynamicObst)
+plotSolution(Sol.coords, [])
+% plotAnimation2(Model, Sol.coords)
 
 %% clear temporal data
 clear adj_type dist_type
