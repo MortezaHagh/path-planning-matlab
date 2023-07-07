@@ -1,4 +1,4 @@
-function [cost, SolChar] = costLinear(Model, coords)
+function [cost, SolChar] = calCostLinear(Model, coords)
 
 xPath = coords(:,1);
 yPath = coords(:,2);

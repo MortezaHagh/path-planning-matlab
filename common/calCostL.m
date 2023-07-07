@@ -1,4 +1,4 @@
-function cost = costL(coords)
+function cost = calCostL(coords)
 
 xPath = coords(:,1);
 yPath = coords(:,2);

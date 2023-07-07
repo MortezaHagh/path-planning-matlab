@@ -35,7 +35,7 @@ tic
 [Model, Path] = myDstarLiteOptimised(Model);
 Sol = Path;   % path structure includes: nodes, coordinations, directions
 Sol.runTime = toc;
-Sol.cost = costL(Sol.coords);
+Sol.cost = calCostL(Sol.coords);
 Sol.smoothness = calSmoothnessbyDir(Sol);
 
 %% display data and plot solution

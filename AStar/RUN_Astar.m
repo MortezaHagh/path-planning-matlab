@@ -39,7 +39,7 @@ tic
 [Model, Path] = myAStar(Model);
 Sol = Path;
 Sol.runTime = toc;
-Sol.cost = costL(Sol.coords);
+Sol.cost = calCostL(Sol.coords);
 Sol.smoothness = calSmoothnessbyDir(Sol);
 
 %% modify path
@@ -47,7 +47,7 @@ tic
 Mpath = modifyPath (Model, Path);
 Msol = Mpath;
 Msol.runTime = Sol.runTime + toc;
-Msol.cost = costL(Msol.coords);
+Msol.cost = calCostL(Msol.coords);
 Msol.smoothness = calSmoothness(Msol.coords);
 %Msol.smoothness = calSmoothnessbyDir(Msol);  #todo
 

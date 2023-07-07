@@ -36,7 +36,7 @@ tic
 [Model, Path] = myLPAstar(Model);
 Sol = Path;
 Sol.runTime = toc;
-Sol.cost = costL(Sol.coords);
+Sol.cost = calCostL(Sol.coords);
 Sol.smoothness = calSmoothnessbyDir(Sol);
 
 %% display data and plot solution
