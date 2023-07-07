@@ -35,11 +35,11 @@ while compareKeys(TopNode.key, Start.key) || RHS(Start.nodeNumber)>G(Start.nodeN
             G(TopNode.nodeNumber) = inf;
             iPred=1;
             costPred = Model.Predecessors{TopNode.nodeNumber, 2};
-            for nodeNumber = [Model.Predecessors{TopNode.nodeNumber, 1} TopNode.nodeNumber]
+            for nodeNumber = [Model.Predecessors{TopNode.nodeNumber, 1}] % TopNode.nodeNumber
                 if (RHS(nodeNumber)==costPred(iPred) + gOld)
                     if nodeNumber~=Model.Robot.targetNode
                         succNodes = Model.Successors{nodeNumber};
-                        RHS(nodeNumber) = min(G(succNodes) + Model.Successors{succNodes, 2});
+                        RHS(nodeNumber) = min(G(succNodes) + Model.Successors{nodeNumber, 2});
                     end
                 end
                 iPred = iPred +1;
