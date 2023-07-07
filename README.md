@@ -85,7 +85,7 @@ Includes final path modification (green path in the simulation pictures).
   </tr>
 </table>
 
-### LPA*and D*Lite
+### LPA* and D*Lite
 
 <table style="padding:10px">
   <tr>
