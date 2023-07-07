@@ -13,7 +13,7 @@ while it <= size(pathCoords,1) - 2
     violation = zeros(1,Model.Obsts.count);
     for k = 1:Model.Obsts.count
         dd = sqrt((X - Model.Obsts.x(k)).^2+(Y - Model.Obsts.y(k)).^2);
-        v = max(1-dd/(Model.Obsts.r),0);
+        v = max(1-dd/(2*Model.Obsts.r),0);
         violation(k) = mean(v);
     end
     Violation = any(violation);

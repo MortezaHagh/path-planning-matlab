@@ -7,11 +7,18 @@ Including heuristic search and incremental heuristic search methods.
 - LPA* (Life Long Planning A*)
 - D*Lite (With Optimized Version)
 
+---
 ## Run
 - Go into the methods directory.
 - Run the **RUN_[Methods_name].m** file
 
-## Astar Settings
+## General
+Apart from each path planning method's directory, there are two general directories:
+- **common**: common functionalities used in all planning methods
+- **models**: functions for creating and saving models (configurations). 
+
+---
+## Common Settings
 can change this setting in the Run_[method].m file 
 - distance type: **Model.distType** ('euclidean' or 'manhattan')
 - distance type: **Model.adjType** ('4adj' or '8adj')
@@ -20,6 +27,7 @@ can change this setting in the Run_[method].m file
   - 'heading': based on distance and heading
 - create_model_method: 'from_map_file', 'from_samples', 'from_custom'
 
+--- 
 ## Configuration - Models
 Initial configuration includes:
 - Map (free nodes)
@@ -37,11 +45,11 @@ You can set the method in the RUn_p[method].m file.
 
 To change the configuration in *from_custom* method, you can edit the **createModelBase.m** file in **models** directory.
 
-## General
-Apart from each path planning method's directory, there are two general directories:
-- **common**: common functionalities used in all planning methods
-- **models**: functions for creating and saving models (configurations). 
+---
+## A*
+Includes final path modification (green path in the simulation pictures).
 
+---
 ## Simulations
 ### Astar
 <table style="padding:10px">

@@ -11,7 +11,7 @@ addpath('..\common');
 
 %% settings
 Model.expandMethod = 'heading'; % random or heading
-Model.distType = 'manhattan'; % euclidean or manhattan;
+Model.distType = 'euclidean'; % euclidean or manhattan;
 Model.adjType = '8adj'; % 4adj or 8adj
 
 %% create Map and Model
