@@ -28,7 +28,6 @@ Including heuristic search and incremental heuristic search methods.
   - LPAStar/RUN_LPAstar.m
   - DStarLite/RUN_DstarLite.m
 
-
 ## General
 
 Apart from each path planning method's directory, there are two general directories:
