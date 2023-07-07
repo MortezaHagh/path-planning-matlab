@@ -37,6 +37,8 @@ Model = createModelAstar(Model);
 % add dynamic obstacles
 Model = newObstacles(Model);
 
+InitModel = Model;
+
 %% start timer
 tic
 
@@ -66,7 +68,7 @@ while Sol.nodeNumbers(end)~=Model.Robot.targetNode
             end
         end
     end
-
+    
     % check if path replanning is needed
     if any(Path.nodeNumbers(pt) == Model.Obsts.nodeNumber)
         Model.Robot.startNode = Sol.nodeNumbers(end);
@@ -97,7 +99,7 @@ Sol.smoothness = calSmoothnessbyDir(Sol);
 %% display data and plot solution
 disp(Sol)
 showDynamicObst = true;
-plotModel(Model, showDynamicObst)
+plotModel(InitModel, showDynamicObst)
 plotSolution(Sol.coords,[])
 % plotAnimation2(Model, Sol.coords)
 
