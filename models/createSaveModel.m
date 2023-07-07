@@ -11,8 +11,8 @@ addpath('..\common');
 
 % settings
 Model.expandMethod = 'random'; % random or heading
-Model.distType = 'manhattan';  % euclidean manhattan;
-Model.adjType = '4adj';        % 4adj 8adj
+Model.distType = 'manhattan'; % euclidean manhattan;
+Model.adjType = '4adj'; % 4adj 8adj
 
 % lad map
 load("Map.mat");
@@ -24,7 +24,7 @@ Model = createModelFromMap(Map, Model);
 Model = addRobotToModel(Model);
 
 % save model
-save('Model','Model')
+save('Model', 'Model')
 
 % Plot
 plotModel(Model);
